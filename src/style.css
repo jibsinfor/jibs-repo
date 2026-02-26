@@ -1,0 +1,131 @@
+:root {
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	/* CUSTOM SIZES */
+	--toolbar-height: 35px;
+	--linear-color: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+	/* CUSTOM COLORS*/
+	--system-color: #245ddb;
+	--google-font-color:#1e59d0; 
+	--google-font-hover:#163cd6; 
+	--startnav-gradient: linear-gradient(
+		to bottom,
+		#4282d6 0%,
+		#3b85e0 3%,
+		#418ae3 5%,
+		#418ae3 17%,
+		#3c87e2 21%,
+		#3786e4 26%,
+		#3482e3 29%,
+		#2e7ee1 39%,
+		#2374df 49%,
+		#2072db 57%,
+		#196edb 62%,
+		#176bd8 72%,
+		#1468d5 75%,
+		#1165d2 83%,
+		#0f61cb 88%
+	);
+	--header-background: linear-gradient(
+    to bottom,
+    #245edbf3 1%,
+    #2762e0 2%,
+    #0a378b 4%,
+    #3874e3 5%,
+    #3d7ae8 6%,
+    #3d7ae8 17%,
+    #3573e4 21%,
+    #2f6fe2 26%,
+    #2b6bdf 29%,
+    #2565dd 39%,
+    #1f5edb 49%,
+    #1c5ad7 57%,
+    #1856d6 62%,
+    #1552d3 72%,
+    #124fd0 75%,
+    #0f4bcc 83%,
+    #0c47c8 88%
+);
+}
+
+a {
+	font-weight: 500;
+	color: #646cff;
+	text-decoration: inherit;
+	&:hover {
+		color: #535bf2;
+	}
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	place-items: center;
+}
+
+#app {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	overflow: hidden;
+}
+
+h1 {
+	font-size: 3.2em;
+	line-height: 1.1;
+}
+
+button {
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: #1a1a1a;
+	cursor: pointer;
+	transition: border-color 0.25s;
+
+	&:hover {
+		border-color: #646cff;
+	}
+
+	&:focus,
+	&:focus-visible {
+		outline: 4px auto -webkit-focus-ring-color;
+	}
+
+}
+
+.hide {
+	display: none;
+	
+}
+
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+	a:hover {
+		color: #747bff;
+	}
+	button {
+		background-color: #f9f9f9;
+	}
+}
+
