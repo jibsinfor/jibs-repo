@@ -1,5 +1,7 @@
-import { ref, computed, onMounted, onUnmounted, type Ref, type CSSProperties } from 'vue'
+import { ref, markRaw, computed, onMounted, onUnmounted, type Ref, type CSSProperties } from 'vue'
 import { windowContents } from "../data/windowContent";
+import Properties from '../aplications/Properties.vue';
+import type { proyectDatas } from '../main';
 
 export function useSelectFrame() {
     const startX: Ref = ref(0)
@@ -66,7 +68,6 @@ export function useWindowHeaderButtons() {
         restore
     }
 }
-
 export async function openWindow (winId: string){
     if (winId.includes("http")){
         window.location.href=winId 
@@ -100,4 +101,29 @@ export function toggleMinimizeWindow (id:string){
     if (win?.windowState==='minimized'){
         win.windowState='default';
     }else if (win) win.windowState='minimized'; 
+}
+
+export function newPropertiesWindow (fileData: proyectDatas | undefined){
+    if (!fileData) return;
+    const newWinId = `porperties-${Date.now()}`;
+    windowContents.value.push({
+            id: newWinId,
+            x:400, 
+            y:200,
+            isOpen: true,
+            windowState: 'default',
+            selected:false,
+            showWinTools:false,
+            directionText:null,
+            showMenubar:false,
+            menuBarOptions: null, 
+            componentToShow: markRaw(Properties),
+            headerData: {
+                headerName: "Propiedades",
+                headerIcon: { url: "./src/assets/app-icons/properties-icon(16x16).png", alt: "properties-icon" }, 
+                allowMaximize: false,
+                isMaximized: false,
+            }, 
+            datas: fileData
+        },)  
 }

@@ -11,8 +11,8 @@ export type fileDoc = {
   name: string
   fullName: string
   src: imgSource
+  datas?: proyectDatas
 }
-
 export type WindowActions = {
   open?:()=> void
   save?: () => void
@@ -20,7 +20,6 @@ export type WindowActions = {
   print?: () => void
   close?: () => void
 }
-
 export type windowFrame = {
   id:string, 
   x: number,
@@ -33,7 +32,8 @@ export type windowFrame = {
   showMenubar:boolean,
   menuBarOptions:Array<string> | null,
   headerData: headerData, 
-  componentToShow: Component | null
+  componentToShow: Component | null, 
+  datas?: proyectDatas
 } 
 export type headerData = {
   headerIcon: imgSource,
@@ -47,6 +47,12 @@ export type desktopIcon = {
   y: number
   docName: string
   img: imgSource
+}
+export type proyectDatas = {
+  description: string
+  functionality: string, 
+  Tecnologies: string,
+  links: Array<{name:string, url:string}>
 }
 
 createApp(App).mount('#app')

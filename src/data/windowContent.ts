@@ -7,7 +7,7 @@ import NotePad from "../aplications/NotePad.vue";
 import PdfReader from "../aplications/PdfReader.vue";
 import MyDocs from "../aplications/MyDocs.vue";
 import MyProyects from "../aplications/MyProyects.vue";
-import Properties from "../aplications/properties.vue";
+import Properties from "../aplications/Properties.vue";
 
 const calculatorId = import.meta.env.VITE_CALCULATOR; 
 const myPCID = import.meta.env.VITE_MYPC; 

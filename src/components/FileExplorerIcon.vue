@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { fileDoc } from '../main';
 import { openWindow } from '../utils/windowFrameFunc';
+import { newPropertiesWindow } from '../utils/windowFrameFunc';
 
 const props = defineProps<{
     fileIcon : fileDoc
@@ -9,7 +10,7 @@ const props = defineProps<{
 </script>
 
 <template>
-    <div class="file-explorer-icon" @dblclick="openWindow(fileIcon.winId)">
+    <div class="file-explorer-icon" @dblclick="openWindow(fileIcon.winId)" @click="newPropertiesWindow(props.fileIcon.datas)">
         <img :src="fileIcon.src.url" :alt="fileIcon.src.alt">
         <p>{{ fileIcon.name }}</p>
     </div>

@@ -23,7 +23,7 @@ const props = defineProps<{
             <div class="content-section">
                 <p class="content-title">Mis Proyectos</p>
                 <div class="folders-space">
-                    <FileExplorerIcon v-for="fileIcon in myProyectFiles" :key="fileIcon.winId" :file-icon="fileIcon" />
+                    <FileExplorerIcon v-for="fileIcon in myProyectFiles" :key="fileIcon.winId" :file-icon="fileIcon"/>
                 </div>
             </div>
         </div>
