@@ -2,15 +2,21 @@
 import type { fileDoc } from '../main';
 import { openWindow } from '../utils/windowFrameFunc';
 import { newPropertiesWindow } from '../utils/windowFrameFunc';
-
+import { ref } from 'vue';
+const winIndex = ref(1);
 const props = defineProps<{
     fileIcon : fileDoc
 }>()
 
+function openPropertiesWindow() {
+    newPropertiesWindow(props.fileIcon.datas, winIndex.value);
+    winIndex.value= winIndex.value * 1.1;
+}
+
 </script>
 
 <template>
-    <div class="file-explorer-icon" @dblclick="openWindow(fileIcon.winId)" @click="newPropertiesWindow(props.fileIcon.datas)">
+    <div class="file-explorer-icon" @dblclick="openWindow(fileIcon.winId)" @click="openPropertiesWindow()">
         <img :src="fileIcon.src.url" :alt="fileIcon.src.alt">
         <p>{{ fileIcon.name }}</p>
     </div>

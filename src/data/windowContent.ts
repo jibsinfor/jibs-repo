@@ -38,25 +38,6 @@ export const windowContents = ref<windowFrame[]>([
         } 
     },
     {
-        id: calculatorId,
-        x:400, 
-        y:200,
-        isOpen: true,
-        windowState: 'default',
-        selected:false,
-        showWinTools:false,
-        directionText:null,
-        showMenubar:false,
-        menuBarOptions: null, 
-        componentToShow: markRaw(Properties),
-        headerData: {
-            headerName: "Propiedades",
-            headerIcon: { url: "./src/assets/app-icons/properties-icon(16x16).png", alt: "properties-icon" }, 
-            allowMaximize: false,
-            isMaximized: false,
-        } 
-    },
-    {
         id: myPCID,
         x: 400,
         y: 80,

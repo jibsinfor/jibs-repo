@@ -103,16 +103,16 @@ export function toggleMinimizeWindow (id:string){
     }else if (win) win.windowState='minimized'; 
 }
 
-export function newPropertiesWindow (fileData: proyectDatas | undefined){
+export function newPropertiesWindow (fileData: proyectDatas | undefined, index: number){
     if (!fileData) return;
     const newWinId = `porperties-${Date.now()}`;
     windowContents.value.push({
             id: newWinId,
-            x:400, 
-            y:200,
+            x:800*index, 
+            y:200*index,
             isOpen: true,
             windowState: 'default',
-            selected:false,
+            selected:true,
             showWinTools:false,
             directionText:null,
             showMenubar:false,
@@ -125,5 +125,6 @@ export function newPropertiesWindow (fileData: proyectDatas | undefined){
                 isMaximized: false,
             }, 
             datas: fileData
-        },)  
+        },)
+    selectWindowFrame(newWinId);  
 }

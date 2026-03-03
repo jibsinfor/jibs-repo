@@ -51,7 +51,7 @@ export type desktopIcon = {
 export type proyectDatas = {
   description: string
   functionality: string, 
-  Tecnologies: string,
+  technologies: string,
   links: Array<{name:string, url:string}>
 }
 

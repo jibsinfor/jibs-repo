@@ -29,7 +29,6 @@ function handlerSearchInput(event: Event){
     const value = (event.target as HTMLInputElement).value; 
     inputValue.value = value;
 }
-
 function linkToSearch (toSearch: string){
     const link ={
         web: `https://www.google.com/search?q=${toSearch}`, 
@@ -42,7 +41,6 @@ function linkToSearch (toSearch: string){
 }
 function setSearchAnchor(){
     const searchinput = encodeURIComponent(inputValue.value); 
-    console.log (searchinput); 
     window.open(linkToSearch(searchinput), '_blank'); 
 }
 

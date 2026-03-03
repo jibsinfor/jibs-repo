@@ -1,29 +1,35 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { proyectDatas} from '../main.ts';
-const selection = ref("Descripción");
-
+const selection = ref("description");
+const content = ref<string>("");
 const props = defineProps<{
     datas: proyectDatas
 }>()
+const tabs = [
+    { label: 'description', value: 'Descripción' },
+    { label: 'functionality', value: 'Funcionalidades' },
+    { label: 'technologies', value: 'Tecnologías' },
+    { label: 'links', value: 'Contacto' }
+];
 
-const tabs = ["Descripción", "funciones", "tecnologías", "contacto"];
 function selectTab(tabName: string) {
     selection.value = tabName;
+    console.log("tab seleccionada: ", tabName);
 }
 
 </script>
 <template>
     <section class="container">
         <div class="button-list">
-            <button v-for="tab in tabs" :key="tab" @click="selectTab(tab)" class="tab-button"
-                :class="{ active: selection === tab }">{{ tab }}
+            <button v-for="tab in tabs" :key="tab.label" @click="selectTab(tab.label)" class="tab-button"
+                :class="{ active: selection === tab.label }">{{ tab.value }}
             </button>
 
         </div>
         <div class="properties-opt">
             <div class="inner-content">
-                <p>container-opt</p>
+                <p>{{ content }}</p>
             </div>
             <button class="close-button">close</button>
         </div>
