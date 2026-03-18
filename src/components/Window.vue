@@ -27,7 +27,7 @@ function toggleMaximize() {
         props.windowFrame.y = 0;
         props.windowFrame.windowState = 'maximized'
     } else {
-        props.windowFrame.x = lastPosition.value.y;
+        props.windowFrame.x = lastPosition.value.x;
         props.windowFrame.y = lastPosition.value.y;
         props.windowFrame.windowState = 'default'
     }

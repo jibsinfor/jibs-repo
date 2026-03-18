@@ -12,7 +12,9 @@ const emit = defineEmits<{
 
 <template>
     <footer class="toolbar-nav">
-        <img @click="$emit('toggle-nav')"  class="start-but" src="../assets/windows-icons/inicio-pc.webp" alt="start-buttom">
+        <button @click="$emit('toggle-nav')"  class="start-but">
+            <img src="../assets/windows-icons/inicio-pc.webp" alt="start-buttom">
+        </button>
 
         <div class="open-file-box">
             <div v-for="openFile in windowContents.filter(w => w.isOpen)"  
@@ -63,9 +65,19 @@ const emit = defineEmits<{
     width: 100%; 
 }
 .start-but {
+    display: flex;
     width: 100px;
-    height: 100%;
+    height:var(--toolbar-height);
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0%;
+    outline: none;
     user-select: none;
+    background: transparent;
+    & img {
+        height: 100%; 
+    }
     &:hover {
         filter: brightness(1.1);
         cursor: pointer;

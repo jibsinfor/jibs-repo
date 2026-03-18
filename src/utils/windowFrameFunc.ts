@@ -118,7 +118,7 @@ export function newPropertiesWindow(fileData: proyectDatas | undefined, index: n
         componentToShow: markRaw(Properties),
         headerData: {
             headerName: "Propiedades",
-            headerIcon: { url: "./src/assets/app-icons/properties-icon(16x16).png", alt: "properties-icon" },
+            headerIcon: { url: "./src/assets/windows-icons/propertyicon(16x16).png", alt: "properties-icon" },
             allowMaximize: false,
             isMaximized: false,
         },

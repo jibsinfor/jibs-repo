@@ -71,7 +71,7 @@ a {
 body {
 	margin: 0;
 	width: 100%;
-	height: 100vh;
+	height: 100dvh;
 	display: flex;
 	place-items: center;
 }
@@ -103,10 +103,10 @@ button {
 		border-color: #646cff;
 	}
 
-	&:focus,
 	&:focus-visible {
-		outline: 4px auto -webkit-focus-ring-color;
-	}
+    outline: 2px solid #ffcc00;  /* Debe ser visible */
+    outline-offset: 2px;
+}
 
 }
 

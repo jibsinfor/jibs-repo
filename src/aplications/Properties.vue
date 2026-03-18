@@ -61,8 +61,13 @@ function closePropertiesWindows (){
             <div class="inner-content">
                 <p>{{ content }}</p>
             </div>
+            <div class="readme-div">
+                <img src="/src/assets/app-icons/readme-icon(90x100).png" alt="readme-icon">
+                <a :href="props.component.datas?.links?.readme" target="_blank" >ver README</a>
+            </div>
             <button class="close-button" @click="closePropertiesWindows">close</button>
         </div>
+
     </section>
 </template>
 
@@ -143,6 +148,43 @@ function closePropertiesWindows (){
     & p{
         text-align: left;
         margin-left: 5px;
+    }
+}
+.readme-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    & a {
+        color: black;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 2px;
+        transition: all .1s ease-in-out;
+        /* border: 1px solid #fff;
+        border-right-color: #808080;
+        border-bottom-color: #808080; */
+
+        &:hover {
+            color:blue; 
+            /* border: 1px solid #fff;
+            border-right-color: #808080;
+            border-bottom-color: #808080;
+            outline: none; */
+        }
+
+        &:active {
+            /* border: 1px solid rgb(163, 163, 162); */
+            outline: none;
+            transform: scale(0.99);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+    & img {
+        width: 40px;
+        height: 50px;
     }
 }
 

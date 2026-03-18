@@ -8,7 +8,7 @@ const { selectedFrame, startSelection, selectStyle } = useSelectFrame();
 </script>
 
 <template>
-    <main class="desktop-window" @mousedown="startSelection">
+    <main class="desktop-window" @mousedown="startSelection"aria-live="polite" aria-label="Escritorio">
         <div v-for="windowFrame in windowContents" :key="windowFrame.id">
             <Window 
                 v-if="windowFrame.isOpen"

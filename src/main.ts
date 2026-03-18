@@ -52,7 +52,7 @@ export type proyectDatas = {
   description: string
   functionality: string, 
   technologies: string,
-  links: {name:string, url:string}
+  links: {readme:string, url:string}
 }
 
 createApp(App).mount('#app')

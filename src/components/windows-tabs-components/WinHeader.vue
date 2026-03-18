@@ -20,9 +20,9 @@ const emit = defineEmits<{
             <p>{{headerInfo.headerName}}</p>
         </div>
         <div class="option-but">
-            <button @click="emit('min-window')" @mousedown.stop class="header-but-minimize"></button>
+            <button @click="emit('min-window')" @mousedown.stop class="header-but-minimize" aria-label="minimizar"></button>
             <button v-show="headerInfo.allowMaximize"  @click="emit('max-window');" @mousedown.stop :class="!headerInfo.isMaximized? 'header-but-maximize' : 'header-but-maximized'"></button>
-            <button @click="emit('close-window');" @mousedown.stop class="header-but-close"></button>
+            <button @click="emit('close-window');" @mousedown.stop class="header-but-close" aria-label="cerrar"></button>
         </div>
     </div>
 </template>
