@@ -30,7 +30,7 @@ export const myProyectFilesEnglish = ref<fileDoc[]>([
             functionality: "log In, sign up,profile management, schedule management, availability settings, set permit Types and a user-friendly interface for easy navigation and interaction.", 
             technologies: "The frontend of TSchedule is built using React offering a dynamic and responsive user interface. The backend is developed with Node.js and Express, handling user authentication (JWT), schedule management, and real-time updates. PSGSQL is used as the database to store user information and scheduling data.",
             links: 
-                {readme:"GitHub Repository", url:"https://team-scheduler-omega.vercel.app/inicio"}
+                {readme:"https://github.com/jibsinfor/team-scheduler/blob/main/README.md", url:"https://team-scheduler-omega.vercel.app/inicio"}
         }
     }, 
 ])
@@ -82,7 +82,7 @@ export const myProyectFiles = ref<fileDoc[]>([
             functionality: "Inicio de sesión, registro, gestión de perfil, gestión de horarios, configuración de disponibilidad, establecimiento de tipos de permisos y una interfaz amigable para una navegación e interacción sencilla.", 
             technologies: "La aplicación está desarrollada con Node.js y Express, manejando la autenticación de usuarios (JWT), gestión de horarios y actualizaciones en tiempo real. PSGSQL se utiliza como base de datos para almacenar la información de los usuarios y los datos de programación.",
             links: 
-                {readme:"GitHub Repository", url:"https://team-scheduler-omega.vercel.app/inicio"}
+                {readme:"https://github.com/jibsinfor/team-scheduler/blob/main/README.md", url:"https://team-scheduler-omega.vercel.app/inicio"}
         }
     }, 
 ])
