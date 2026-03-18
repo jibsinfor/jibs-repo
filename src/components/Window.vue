@@ -18,10 +18,6 @@ const emit = defineEmits<{
     (e: 'click'): void
 }>()
 
-function closeWindow() {
-    emit('close-window');
-}
-
 function toggleMaximize() {
 
     if (props.windowFrame.windowState === 'default') {
@@ -54,10 +50,10 @@ function executeAction(action: keyof WindowActions) {
         :style="[windowFrame.windowState === 'default' ? dragStyle : {}, { top: `${props.windowFrame.y}px`, left: `${props.windowFrame.x}px` }]"
         :class="[`window-${windowFrame.windowState}`, { dragging, 'selected-window': windowFrame.selected }]"
         @click="emit('click')">
-        <WinHeader @mousedown="startDrag" @min-window="minimizeWindow" @close-window="closeWindow"
+        <WinHeader @mousedown="startDrag" @min-window="minimizeWindow" @close-window=" emit('close-window')"
             @max-window="toggleMaximize" :header-info="props.windowFrame.headerData" />
 
-        <MenuBar v-if="props.windowFrame.showMenubar" @close-win="closeWindow"
+        <MenuBar v-if="props.windowFrame.showMenubar" @close-win=" emit('close-window')"
             :avaible-action="props.windowFrame.menuBarOptions" @action="executeAction" />
         <WinTool v-if="props.windowFrame.showWinTools" :direction-text="props.windowFrame.directionText"/>
 

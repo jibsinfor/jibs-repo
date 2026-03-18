@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { proyectDatas} from '../main.ts';
+import type { windowFrame } from '../main.ts';
+import { closeWindow } from '../utils/windowFrameFunc.ts';
+
 const selection = ref("description");
-const content = ref<string>("");
 const props = defineProps<{
-    datas: proyectDatas
+    component: windowFrame;
+}>(); 
+const emit = defineEmits<{
+    (e: 'close-window'): void
+    (e: 'click'): void
 }>()
+
+const content = ref<string>(`${props.component.datas?.description || "No description available."}`);
 const tabs = [
     { label: 'description', value: 'Descripción' },
     { label: 'functionality', value: 'Funcionalidades' },
@@ -13,9 +20,32 @@ const tabs = [
     { label: 'links', value: 'Contacto' }
 ];
 
+function updateContent() {
+    switch (selection.value) {
+        case 'description':
+            content.value = props.component.datas?.description || "No description available.";
+            break;
+        case 'functionality':
+            content.value = props.component.datas?.functionality || "No functionality information available.";
+            break;
+        case 'technologies':
+            content.value = props.component.datas?.technologies || "No technologies information available.";
+            break;
+        case 'links':
+            content.value = props.component.datas?.links?.url || "No contact information available.";
+            break;
+        default:
+            content.value = "No information available.";
+    }
+}
+
 function selectTab(tabName: string) {
     selection.value = tabName;
-    console.log("tab seleccionada: ", tabName);
+    updateContent()
+}
+
+function closePropertiesWindows (){
+    closeWindow(props.component.id)
 }
 
 </script>
@@ -31,10 +61,11 @@ function selectTab(tabName: string) {
             <div class="inner-content">
                 <p>{{ content }}</p>
             </div>
-            <button class="close-button">close</button>
+            <button class="close-button" @click="closePropertiesWindows">close</button>
         </div>
     </section>
 </template>
+
 <style>
 .container {
     background-color: rgb(226, 226, 218);
@@ -91,10 +122,12 @@ function selectTab(tabName: string) {
     border-right-color: #808080;
     border-bottom-color: #808080;
     background: #dfdfdf;
-    ;
     position: relative;
     z-index: 1;
     min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .inner-content {
@@ -102,10 +135,15 @@ function selectTab(tabName: string) {
     padding: 5px;
     background: #ffffff;
     border: 1px solid #808080;
-    border-right-color: #fff;
-    border-bottom-color: #fff;
+    border-right-color: #d4d1d1;
+    border-bottom-color: #d4d1d1;
     min-height: 200px;
+    width: clamp(100px, 300px, 300px);
     color: black;
+    & p{
+        text-align: left;
+        margin-left: 5px;
+    }
 }
 
 .close-button {
@@ -136,8 +174,9 @@ function selectTab(tabName: string) {
         transform: scale(0.99);
         /* ⚠️ cambio importante */
     }
+
     &:focus {
-    outline: none;
-}
+        outline: none;
+    }
 }
 </style>

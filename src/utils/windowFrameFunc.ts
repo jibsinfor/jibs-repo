@@ -54,7 +54,6 @@ export function useSelectFrame() {
 
     return { selectedFrame, startSelection, selectStyle }
 }
-
 export function useWindowHeaderButtons() {
     const close = ref(false)
     const minimize = ref(false)
@@ -68,63 +67,61 @@ export function useWindowHeaderButtons() {
         restore
     }
 }
-export async function openWindow (winId: string){
-    if (winId.includes("http")){
-        window.location.href=winId 
-        return; 
+export async function openWindow(winId: string) {
+    if (winId.includes("http")) {
+        window.location.href = winId
+        return;
     } else {
         windowContents.value.forEach(w => {
-            (w.id === winId)?w.selected=true:w.selected=false;  
+            (w.id === winId) ? w.selected = true : w.selected = false;
         });
-        windowContents.value.filter(w=>{
-            if (w.id===winId){
-                w.isOpen=true; 
-            }  
-        })    
+        windowContents.value.filter(w => {
+            if (w.id === winId) {
+                w.isOpen = true;
+            }
+        })
     }
 }
-export function closeWindow (winId: string){ 
-    windowContents.value.filter(w=>{
-        if (w.id===winId){
-            w.isOpen=false; 
-            w.selected=false; 
+export function closeWindow(winId: string) {
+    windowContents.value.filter(w => {
+        if (w.id === winId) {
+            w.isOpen = false;
+            w.selected = false;
         }
     })
 }
-export function selectWindowFrame(id: string ){ 
+export function selectWindowFrame(id: string) {
     windowContents.value.forEach(element => {
-        (element.id === id)?element.selected=true:element.selected=false;  
+        (element.id === id) ? element.selected = true : element.selected = false;
     });
 }
-export function toggleMinimizeWindow (id:string){
-    const win = windowContents.value.find(w => w.id === id); 
-    if (win?.windowState==='minimized'){
-        win.windowState='default';
-    }else if (win) win.windowState='minimized'; 
+export function toggleMinimizeWindow(id: string) {
+    const win = windowContents.value.find(w => w.id === id);
+    if (win?.windowState === 'minimized') {
+        win.windowState = 'default';
+    } else if (win) win.windowState = 'minimized';
 }
-
-export function newPropertiesWindow (fileData: proyectDatas | undefined, index: number){
+export function newPropertiesWindow(fileData: proyectDatas | undefined, index: number) {
     if (!fileData) return;
-    const newWinId = `porperties-${Date.now()}`;
+    const newWinId = `properties-${Date.now()}`;
     windowContents.value.push({
-            id: newWinId,
-            x:800*index, 
-            y:200*index,
-            isOpen: true,
-            windowState: 'default',
-            selected:true,
-            showWinTools:false,
-            directionText:null,
-            showMenubar:false,
-            menuBarOptions: null, 
-            componentToShow: markRaw(Properties),
-            headerData: {
-                headerName: "Propiedades",
-                headerIcon: { url: "./src/assets/app-icons/properties-icon(16x16).png", alt: "properties-icon" }, 
-                allowMaximize: false,
-                isMaximized: false,
-            }, 
-            datas: fileData
-        },)
-    selectWindowFrame(newWinId);  
+        id: newWinId,
+        x: 800 * index,
+        y: 200 * index,
+        isOpen: true,
+        windowState: 'default',
+        selected: false,
+        showWinTools: false,
+        directionText: null,
+        showMenubar: false,
+        menuBarOptions: null,
+        componentToShow: markRaw(Properties),
+        headerData: {
+            headerName: "Propiedades",
+            headerIcon: { url: "./src/assets/app-icons/properties-icon(16x16).png", alt: "properties-icon" },
+            allowMaximize: false,
+            isMaximized: false,
+        },
+        datas: fileData
+    },)
 }

@@ -10,17 +10,6 @@ const emit = defineEmits<{
     (e: 'min-window'): void
     (e: 'max-window'): void
 }>()
-
-function closeWin (){
-    emit('close-window');
-}
-function minWindow (){
-    emit('min-window')
-    
-}
-function maxWindow (){
-    emit('max-window');
-}
 </script>
 
 
@@ -31,9 +20,9 @@ function maxWindow (){
             <p>{{headerInfo.headerName}}</p>
         </div>
         <div class="option-but">
-            <button @click="minWindow" @mousedown.stop class="header-but-minimize"></button>
-            <button v-show="headerInfo.allowMaximize"  @click="maxWindow" @mousedown.stop :class="!headerInfo.isMaximized? 'header-but-maximize' : 'header-but-maximized'"></button>
-            <button @click="closeWin" @mousedown.stop class="header-but-close"></button>
+            <button @click="emit('min-window')" @mousedown.stop class="header-but-minimize"></button>
+            <button v-show="headerInfo.allowMaximize"  @click="emit('max-window');" @mousedown.stop :class="!headerInfo.isMaximized? 'header-but-maximize' : 'header-but-maximized'"></button>
+            <button @click="emit('close-window');" @mousedown.stop class="header-but-close"></button>
         </div>
     </div>
 </template>

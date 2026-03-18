@@ -40,7 +40,7 @@ const { selectedFrame, startSelection, selectStyle } = useSelectFrame();
 }
 .desktopFrame.selectedFrame {
     position: absolute;
-    z-index: 100;
+    z-index: 500;
     display: block;
     border: 1px dashed rgba(0, 0, 0, 0.321);
     background: rgba(0, 118, 215, 0.1);
