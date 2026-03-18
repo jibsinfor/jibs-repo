@@ -47,9 +47,10 @@ function executeAction(action: keyof WindowActions) {
 
 <template>
     <section
-        :style="[windowFrame.windowState === 'default' ? dragStyle : {}, { top: `${props.windowFrame.y}px`, left: `${props.windowFrame.x}px` }]"
+        :style="[windowFrame.windowState === 'default' ? dragStyle : {}, { top: `${props.windowFrame.y}px`, left: `${props.windowFrame.x}px`}]"
         :class="[`window-${windowFrame.windowState}`, { dragging, 'selected-window': windowFrame.selected }]"
-        @click="emit('click')">
+        @click="emit('click')"
+        @mousedown="(e)=>{e.stopPropagation()}">
         <WinHeader @mousedown="startDrag" @min-window="minimizeWindow" @close-window=" emit('close-window')"
             @max-window="toggleMaximize" :header-info="props.windowFrame.headerData" />
 
@@ -109,6 +110,7 @@ function executeAction(action: keyof WindowActions) {
     & * {
         user-select: none;
     }
+    
 }
 
 .selected-window {
