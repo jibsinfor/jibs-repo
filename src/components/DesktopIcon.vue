@@ -47,6 +47,7 @@ const props = defineProps<{
     }
 
     & p {
+        color:#fff; 
         font-size: 12px;
         text-wrap: auto;
         text-align: center;

@@ -27,7 +27,7 @@ const { selectedFrame, startSelection, selectStyle } = useSelectFrame();
 <style>
 .desktop-window {
     display: flex;
-    background: url("..\assets\windows-desktop.webp");
+    background: url("../assets/windows-desktop.webp");
     background-size: cover;
     width: 100%;
     height: calc(100% - var(--toolbar-height));

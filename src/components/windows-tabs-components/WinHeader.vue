@@ -52,6 +52,7 @@ const emit = defineEmits<{
     }
 
     & p {
+        color: #fff; 
         font-size: 16px;
         font-weight: 500;
         margin-left: 5px;

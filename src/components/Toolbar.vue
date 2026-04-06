@@ -84,6 +84,7 @@ const emit = defineEmits<{
     }
 }
 .open-file-box {
+    color: #FFF;
     display: flex;
     align-items: center;
     justify-content: start;
