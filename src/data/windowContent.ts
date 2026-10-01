@@ -31,7 +31,7 @@ export const windowContents = ref<windowFrame[]>([
         componentToShow: markRaw(Calculator),
         headerData: {
             headerName: "Calculadora",
-            headerIcon: { url: "./src/assets/app-icons/calculator-icon(16x16).png", alt: "calculator-icon" }, 
+            headerIcon: { url: new URL("../assets/app-icons/calculator-icon(16x16).png", import.meta.url).href, alt: "calculator-icon" }, 
             allowMaximize: false,
             isMaximized: false,
         } 
@@ -50,7 +50,7 @@ export const windowContents = ref<windowFrame[]>([
         componentToShow: markRaw(FileExplorer),
         headerData: {
             headerName: "Mi PC",
-            headerIcon: { url: "/src/assets/windows-icons/MyPC(32x32).png", alt: "my-pc-icon" },
+            headerIcon: { url: new URL("../assets/windows-icons/MyPC(32x32).png", import.meta.url).href, alt: "my-pc-icon" },
             isMaximized: false,
             allowMaximize: true
         }
@@ -69,7 +69,7 @@ export const windowContents = ref<windowFrame[]>([
         componentToShow: markRaw(InternetExplorer),
         headerData: {
             headerName: "Internet Explorer",
-            headerIcon: { url: "/src/assets/app-icons/internet-exporer(32x32).png", alt: "internet-explorer-icon" },
+            headerIcon: { url: new URL("../assets/app-icons/internet-exporer(32x32).png", import.meta.url).href, alt: "internet-explorer-icon" },
             isMaximized: false,
             allowMaximize: true
         }
@@ -88,7 +88,7 @@ export const windowContents = ref<windowFrame[]>([
         componentToShow: markRaw(NotePad),
         headerData: {
             headerName: "NotePad",
-            headerIcon: { url: "/src/assets/app-icons/notePad.png", alt: "internet-explorer-icon" },
+            headerIcon: { url: new URL("../assets/app-icons/notePad.png", import.meta.url).href, alt: "internet-explorer-icon" },
             isMaximized: false,
             allowMaximize: true
         }
@@ -107,7 +107,7 @@ export const windowContents = ref<windowFrame[]>([
         componentToShow: markRaw(PdfReader),
         headerData: {
             headerName: "Adobe Reader",
-            headerIcon: { url: "/src/assets/app-icons/adobe-reader(100x90).webp", alt: "adobe-reader-icon" },
+            headerIcon: { url: new URL("../assets/app-icons/adobe-reader(100x90).webp", import.meta.url).href, alt: "adobe-reader-icon" },
             isMaximized: false,
             allowMaximize: true
         }
@@ -126,7 +126,7 @@ export const windowContents = ref<windowFrame[]>([
         componentToShow: markRaw(MyDocs),
         headerData: {
             headerName: "Mis Documentos",
-            headerIcon: { url: "/src/assets/windows-icons/docFolder(32x32).png", alt: "myDocs-icon" },
+            headerIcon: { url: new URL("../assets/windows-icons/docFolder(32x32).png", import.meta.url).href, alt: "myDocs-icon" },
             isMaximized: false,
             allowMaximize: true
         }
@@ -145,7 +145,7 @@ export const windowContents = ref<windowFrame[]>([
         componentToShow: markRaw(MyProyects),
         headerData: {
             headerName: "Mis Proyectos",
-            headerIcon: { url: "/src/assets/windows-icons/MyProyects(32x32).png", alt: "myProyects-icon" },
+            headerIcon: { url: new URL("../assets/windows-icons/MyProyects(32x32).png", import.meta.url).href, alt: "myProyects-icon" },
             isMaximized: false,
             allowMaximize: true
         }
@@ -158,28 +158,28 @@ export const desktopIcons = ref<desktopIcon[]>([
         x: 20,
         y: 20,
         docName: "Mi PC",
-        img: { url: "/src/assets/windows-icons/MyPC(32x32).png", alt: "my-pc-icon" }
+        img: { url: new URL("../assets/windows-icons/MyPC(32x32).png", import.meta.url).href, alt: "my-pc-icon" }
     }, 
     {
         winId:internetID,
         x: 20,
         y: 120,
         docName: "internet Explorer",
-        img: { url: "/src/assets/app-icons/internet-exporer(32x32).png", alt: "ie-icon" }
+        img: { url: new URL("../assets/app-icons/internet-exporer(32x32).png", import.meta.url).href, alt: "ie-icon" }
     }, 
     {
         winId: MyProyectsId,
         x: 20,
         y: 220,
         docName: "Mis Proyectos",
-        img: { url: "/src/assets/windows-icons/MyProyects(32x32).png", alt: "my-proyectss-icon" }
+        img: { url: new URL("../assets/windows-icons/MyProyects(32x32).png", import.meta.url).href, alt: "my-proyectss-icon" }
     }, 
     {
         winId:pdfReaderId, 
         x: 20,
         y: 320,
         docName: "Mi CV",
-        img: { url: "/src/assets/app-icons/pdf-icon(32x32).png", alt: "my-cv-icon" }
+        img: { url: new URL("../assets/app-icons/pdf-icon(32x32).png", import.meta.url).href, alt: "my-cv-icon" }
     }
 
 ]); 
