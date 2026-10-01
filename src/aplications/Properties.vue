@@ -148,6 +148,7 @@ function closePropertiesWindows (){
     & p{
         text-align: left;
         margin-left: 5px;
+        user-select: text;
     }
 }
 .readme-div {

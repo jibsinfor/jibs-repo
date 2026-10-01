@@ -3,6 +3,7 @@ import { ref } from 'vue'
 
 const gotoId = import.meta.env.VITE_GOTO; 
 const tSchedulerId = import.meta.env.VITE_TS; 
+const handOverId = import.meta.env.VITE_HANDOVER
 const gitId = import.meta.env.VITE_GIT
 const linkedinId = import.meta.env.VITE_LINKEDIN
 const pdfReaderId = import.meta.env.VITE_PDFREADER 
@@ -85,4 +86,18 @@ export const myProyectFiles = ref<fileDoc[]>([
                 {readme:"https://github.com/jibsinfor/team-scheduler/blob/main/README.md", url:"https://team-scheduler-omega.vercel.app/inicio"}
         }
     }, 
+    {
+        winId:handOverId, 
+        name:'Hand Over', 
+        fullName:"Hand Over PumpMan", 
+        src: {url:'/src/assets/app-icons/handover-icon.png', alt:'hand-over-icon'}, 
+        datas: {
+            description:'Esta aplicación actualmente está siendo utilizada por compañeros de trabajo para realizar para cumplimentar sus relevos que por procedimiento tiene que ser impreso en formato en papel.', 
+            functionality:'Registra el estado de diferentes elementos en la terminal y resume el estado general de la terminal. ',
+            technologies:'El frontend está desarrollado con react y para las funcionalidades de base de datos e ia se aprovechan las herramientas facilitadas en cloudflare de datos persistentes e IA.',
+            links:
+                {readme: 'https://github.com/jibsinfor/hand-over-pumpman/blob/main/README.md', url:'Por motivos de seguridad no puedo compartir este enlace, ya que la aplicación no tiene control de acceso y escribe directamente sobre la base de datos de producción. Cualquier modificación externa podría afectar al flujo de trabajo de los empleados.'}
+        }
+
+    }
 ])
